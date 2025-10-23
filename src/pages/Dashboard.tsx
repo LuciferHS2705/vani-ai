@@ -1,6 +1,7 @@
 import { PracticeCard } from "@/components/PracticeCard";
 import { BottomNav } from "@/components/BottomNav";
 import { GlassCard } from "@/components/GlassCard";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Mic, Briefcase, Presentation, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -41,15 +42,18 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background pb-24">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-border">
+      <div className="sticky top-0 z-40 bg-card/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-foreground">Practice Modes</h1>
               <p className="text-sm text-muted-foreground mt-1">Choose your training today</p>
             </div>
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-lg shadow-lg">
-              V
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold text-lg shadow-lg">
+                V
+              </div>
             </div>
           </div>
         </div>

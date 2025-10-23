@@ -1,16 +1,20 @@
 import { BottomNav } from "@/components/BottomNav";
 import { GlassCard } from "@/components/GlassCard";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
-import { User, Settings, Bell, HelpCircle, LogOut } from "lucide-react";
+import { User, Settings, Bell, HelpCircle, LogOut, Palette } from "lucide-react";
 
 const Profile = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background pb-24">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <h1 className="text-2xl font-bold text-foreground">Profile</h1>
-          <p className="text-sm text-muted-foreground mt-1">Manage your account settings</p>
+      <div className="sticky top-0 z-40 bg-card/80 backdrop-blur-lg border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold text-foreground">Profile</h1>
+            <p className="text-sm text-muted-foreground mt-1">Manage your account settings</p>
+          </div>
+          <ThemeToggle />
         </div>
       </div>
 
@@ -34,15 +38,16 @@ const Profile = () => {
         <GlassCard className="divide-y divide-border/50">
           {[
             { icon: User, label: "Account Settings", desc: "Manage your personal information" },
+            { icon: Palette, label: "Theme", desc: "Dark mode toggle", component: <ThemeToggle /> },
             { icon: Bell, label: "Notifications", desc: "Configure your alerts" },
             { icon: Settings, label: "App Preferences", desc: "Customize your experience" },
             { icon: HelpCircle, label: "Help & Support", desc: "Get assistance" },
           ].map((item) => {
             const Icon = item.icon;
             return (
-              <button
+              <div
                 key={item.label}
-                className="w-full flex items-center gap-4 p-4 hover:bg-white/40 transition-colors first:rounded-t-2xl last:rounded-b-2xl"
+                className="w-full flex items-center gap-4 p-4 first:rounded-t-2xl last:rounded-b-2xl"
               >
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-primary" />
@@ -51,7 +56,8 @@ const Profile = () => {
                   <h3 className="font-medium text-foreground">{item.label}</h3>
                   <p className="text-xs text-muted-foreground">{item.desc}</p>
                 </div>
-              </button>
+                {'component' in item && item.component}
+              </div>
             );
           })}
         </GlassCard>

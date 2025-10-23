@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/GlassCard";
 import { BottomNav } from "@/components/BottomNav";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { useNavigate } from "react-router-dom";
 import { Sparkles, Target, TrendingUp, Award } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
@@ -33,6 +34,24 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background pb-24">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold shadow-lg">
+              V
+            </div>
+            <h1 className="text-xl font-bold text-foreground">VANI</h1>
+          </div>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Button variant="hero" onClick={() => navigate("/dashboard")}>
+              Get Started
+            </Button>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 animate-glow" />
