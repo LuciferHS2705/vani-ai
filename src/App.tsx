@@ -13,6 +13,17 @@ import MockInterview from "./pages/MockInterview";
 import PresentationPractice from "./pages/PresentationPractice";
 import GroupDiscussion from "./pages/GroupDiscussion";
 import NotFound from "./pages/NotFound";
+import AuthPage from "./pages/AuthPage";
+
+function App() {
+  return (
+    <div>
+      <AuthPage />
+    </div>
+  );
+}
+
+export default App;
 
 const queryClient = new QueryClient();
 
