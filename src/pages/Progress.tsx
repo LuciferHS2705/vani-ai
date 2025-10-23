@@ -6,7 +6,7 @@ const Progress = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background pb-24">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-border">
+      <div className="sticky top-0 z-40 bg-card/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <h1 className="text-2xl font-bold text-foreground">Your Progress</h1>
           <p className="text-sm text-muted-foreground mt-1">Track your improvement journey</p>
@@ -70,7 +70,7 @@ const Progress = () => {
               { title: "First Interview", desc: "Completed mock interview", icon: "🎯" },
               { title: "Speech Master", desc: "10 speech sessions done", icon: "🎤" },
             ].map((achievement) => (
-              <div key={achievement.title} className="flex items-center gap-4 p-3 rounded-xl bg-white/40 hover:bg-white/60 transition-all">
+              <div key={achievement.title} className="flex items-center gap-4 p-3 rounded-xl bg-card/40 hover:bg-card/60 transition-all">
                 <div className="text-3xl">{achievement.icon}</div>
                 <div className="flex-1">
                   <h4 className="font-medium text-foreground">{achievement.title}</h4>
